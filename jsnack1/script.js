@@ -6,21 +6,28 @@ In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby,
 
 
 const guestList = ["Ciro", "Luca", "Erick", "Stefano", "Lucio", "Giova"];
-const nameUser = prompt('Inserisci il nome');
-
+const button = document.getElementById('btn');
+let nameUser = document.getElementById('nome-invitato');
+let result = document.querySelector('.result');
 let trovato = false;
 
-for (let i = 0; i < guestList.length && trovato === false; i++) {
+button.addEventListener('click', function () {
+    for (let i = 0; i < guestList.length && trovato === false; i++) {
 
-    if (guestList[i] === nameUser.trim()) {
-        trovato = true;
+        if (guestList[i] === nameUser.value.trim()) {
+            trovato = true;
+        }
     }
-}
 
-if (trovato === true) {
-    console.log('Puoi partecipare alla festa');
-} else {
-    console.log('Non puoi partecipare alla festa');
-}
+    if (trovato === true) {
+        result.innerHTML = 'Puoi partecipare alla festa';
+    } else {
+        result.innerHTML = 'Non puoi partecipare alla festa';
+    }
+})
 
+document.getElementById('btn-reset').addEventListener('click', function () {
+    result.innerText = '';
+    nameUser.value = '';
+})
 
