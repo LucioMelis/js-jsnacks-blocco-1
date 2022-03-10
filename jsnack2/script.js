@@ -8,11 +8,10 @@ const containerNumberOdd = [];
 
 for (i = 0; i < 6; i++) {
     let userNumber = parseInt(prompt('Inserisci un numero'));
-    if (userNumber % 2 === 0) {
-        console.log('Hai inserito un numero pari');
-    } else {
-        console.log('Hai inserito un numero dispari');
+    if (userNumber % 2 === 1) {
         containerNumberOdd.push(userNumber);
-        console.log(containerNumberOdd);
+    } else {
+        console.log('hai inserito un numero pari');
     }
 }
+console.log(containerNumberOdd);
